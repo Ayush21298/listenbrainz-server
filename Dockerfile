@@ -11,6 +11,9 @@ RUN apt-get update \
                        git \
     && rm -rf /var/lib/apt/lists/*
 
+# This will not be used in the dev environment -- it is used for the production setup
+RUN pip install uWSGI
+
 # PostgreSQL client
 RUN apt-key adv --keyserver ha.pool.sks-keyservers.net --recv-keys B97B0AFCAA1A47F044F244A07FCC7D46ACCC4CF8
 ENV PG_MAJOR 9.5
