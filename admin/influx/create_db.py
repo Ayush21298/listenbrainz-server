@@ -13,5 +13,9 @@ if __name__ == "__main__":
     except Exception as e:
         print("Creating influx DB failed: ", e)
 
-# TODO: add retention policy
-# CREATE RETENTION POLICY "1_week" ON "listenbrainz" DURATION 3d REPLICATION 1
+    try:
+# TODO use the actual 7 day query here
+#        i.create_retention_policy("one_week", "1w", 1, "listenbrainz")
+        i.create_retention_policy("one_week", "1h", 1, "listenbrainz")
+    except Exception as e:
+        print("Creating retention policy failed: ", e)
