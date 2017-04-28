@@ -13,5 +13,5 @@ if __name__ == "__main__":
     except Exception as e:
         print("Creating influx DB failed: ", e)
 
-# TODO: add continuous queries
-# create continuous query qc_sub_listen_totals on listenbrainz begin select sum(item_count) into __listen_total from __listen_count  GROUP BY time(10s) end 
+# TODO: add retention policy
+# CREATE RETENTION POLICY "1_week" ON "listenbrainz" DURATION 3d REPLICATION 1
