@@ -1,1 +1,2 @@
 CREATE DATABASE listenbrainz;
+CREATE RETENTION POLICY "one_week" ON "listenbrainz" DURATION 1w REPLICATION 1;
